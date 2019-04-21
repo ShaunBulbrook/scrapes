@@ -3,19 +3,23 @@
 	"version": "0.1.0",
 	"description": "A command line utility that scrapes information from a webpage.",
 	"main": "index.js",
-	"bin": "./app.js",
+	"bin": "dist/app.js",
+	"files": [
+		"./dist"
+	],
 	"scripts": {
-		"test": "jest"
+		"test": "jest",
+		"build": "tsc && npm install -g"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"@types/cheerio": "^0.22.11",
-		"@types/jest": "^24.0.11",
+		"@types/jest": "^23.0.0",
 		"@types/node-fetch": "^2.3.2",
-		"jest": "^24.7.1",
-		"ts-jest": "^24.0.2",
+		"jest": "^23.0.0",
+		"ts-jest": "^23.0.0",
 		"typescript": "^3.4.4"
 	},
 	"dependencies": {
