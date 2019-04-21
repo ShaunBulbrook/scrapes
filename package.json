@@ -1,8 +1,9 @@
 {
 	"name": "scrapes",
 	"version": "0.1.0",
-	"description": "A set of utils that returns information from webpages.",
+	"description": "A command line utility that scrapes information from a webpage.",
 	"main": "index.js",
+	"bin": "./app.js",
 	"scripts": {
 		"test": "jest"
 	},
@@ -18,7 +19,9 @@
 		"typescript": "^3.4.4"
 	},
 	"dependencies": {
-		"node-fetch": "^2.3.0",
-		"cheerio": "^1.0.0-rc.3"
+		"@types/commander": "^2.12.2",
+		"cheerio": "^1.0.0-rc.3",
+		"commander": "^2.20.0",
+		"node-fetch": "^2.3.0"
 	}
 }
