@@ -108,13 +108,3 @@ exports[`getPage should return markup: <!DOCTYPE html>
 </html>
 "
 `;
-
-exports[`scrapeSelection should return the content of multiple targeted elements: paragraphs 1`] = `
-"
-				This domain is established to be used for illustrative examples in
-				documents. You may use this domain in examples without prior
-				coordination or asking for permission.
-			
-				More information...
-			"
-`;

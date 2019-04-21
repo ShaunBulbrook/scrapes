@@ -1,17 +1,8 @@
-import { getPage, scrapeSelection, scrapeLinks } from "./index";
-import { markup, hackerNewsMarkup } from "./stubs/markup";
+import { scrapeSelection, scrapeLinks } from "./scrape";
+import { markup, hackerNewsMarkup } from "../stubs/markup";
 
 const fetch = jest.fn();
 fetch.mockReturnValue(markup);
-
-describe("getPage", () => {
-	it("should return markup", done => {
-		getPage("http://example.com").then(html => {
-			expect(html).toMatchSnapshot(markup);
-			done();
-		});
-	});
-});
 
 describe("scrapeSelection", () => {
 	it("should inform the user that if it failed to find results", () => {
