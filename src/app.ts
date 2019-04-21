@@ -23,3 +23,9 @@ commander.command("links <location>").action((location: string) => {
 });
 
 commander.parse(process.argv);
+
+module.exports = {
+	getPage: getPage,
+	scrapeLinks: scrape.scrapeLinks,
+	scrapeSelection: scrape.scrapeSelections
+};

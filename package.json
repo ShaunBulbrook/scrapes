@@ -1,11 +1,11 @@
 {
 	"name": "scrapes",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "A command line utility that scrapes information from a webpage.",
-	"main": "index.js",
+	"main": "dist/app.js",
 	"bin": "dist/app.js",
 	"files": [
-		"./dist"
+		"./dist/**/*"
 	],
 	"scripts": {
 		"test": "jest",
