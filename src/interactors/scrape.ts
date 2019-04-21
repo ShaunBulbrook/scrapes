@@ -1,12 +1,12 @@
-import cheerio from "cheerio";
+const Cheerio = require("cheerio");
 
 /**
  * Takes markup and a query selector. Returns the text under elements that match the selector
  * @param markup string of html
  * @param selector query selector to rip text from
  */
-export const scrapeSelection = (markup: string, selector: string): string => {
-	const $: any = cheerio.load(markup);
+module.exports.scrapeSelection = (markup: string, selector: string): string => {
+	const $: any = Cheerio.load(markup);
 	return $(selector).text() || "No results found.";
 };
 
@@ -14,8 +14,8 @@ export const scrapeSelection = (markup: string, selector: string): string => {
  * Takes markup and returns an array of all links of the page.
  * @param markup string of html
  */
-export const scrapeLinks = (markup: string): string[] => {
-	const $: any = cheerio.load(markup);
+module.exports.scrapeLinks = (markup: string): string[] => {
+	const $: any = Cheerio.load(markup);
 	const links: string[] = [];
 
 	$("a[href]").each((index: number, element: any) =>
