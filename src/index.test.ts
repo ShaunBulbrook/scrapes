@@ -14,18 +14,18 @@ describe("getPage", () => {
 });
 
 describe("scrapeSelection", () => {
-	it("should return the the text value for the heading", () => {
-		const value: string = scrapeSelection("http://example.com", "h1");
-		expect(value).toBe("Example Domain");
+	it("should inform the user that if it failed to find results", () => {
+		expect(scrapeSelection("", "")).toBe("No results found.");
 	});
-	it("Should return the display test for the anchor tag", () => {
-		const value: strung = scrapeSelection("http://example.com", "p a");
-		expect(value).toBe("More information...");
+	it("should return the content of a targeted element", () => {
+		expect(scrapeSelection(markup, "h1")).toBe("Example Domain");
 	});
-	it("Should return the content of multiple elements when required ", () => {
-		const value: string = scrapeSelection("http://example.com", "p");
-		expect(value)
-			.toBe(`This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.
-			More information...`);
+	it("should return the content of multiple targeted elements", () => {
+		expect(scrapeSelection(markup, "p")).toMatchSnapshot("paragraphs");
+	});
+	it("should be able to use attribute selectors", () => {
+		expect(
+			scrapeSelection(markup, `a[href="http://www.iana.org/domains/example"]`)
+		).toBe("More information...");
 	});
 });
