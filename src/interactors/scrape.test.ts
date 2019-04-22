@@ -5,9 +5,6 @@ const fetch = jest.fn();
 fetch.mockReturnValue(markup);
 
 describe("scrapeSelection", () => {
-	it("should inform the user that if it failed to find results", () => {
-		expect(scrapeSelection("", "")).toBe("No results found.");
-	});
 	it("should return the content of a targeted element", () => {
 		expect(scrapeSelection(markup, "h1")).toBe("Example Domain");
 	});
@@ -18,6 +15,12 @@ describe("scrapeSelection", () => {
 		expect(
 			scrapeSelection(markup, `a[href="http://www.iana.org/domains/example"]`)
 		).toBe("More information...");
+	});
+	it("should throw an error if no results can be found", () => {
+		function scrapeSelectionFromNothing() {
+			scrapeSelection("", "");
+		}
+		expect(scrapeSelectionFromNothing).toThrowError("No results found.");
 	});
 });
 

@@ -7,7 +7,12 @@ const Cheerio = require("cheerio");
  */
 module.exports.scrapeSelection = (markup: string, selector: string): string => {
 	const $: any = Cheerio.load(markup);
-	return $(selector).text() || "No results found.";
+	const selectedContent = $(selector).text();
+	if (selectedContent) {
+		return selectedContent;
+	} else {
+		throw "No results found.";
+	}
 };
 
 /**
