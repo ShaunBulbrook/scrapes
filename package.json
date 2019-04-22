@@ -1,7 +1,11 @@
 {
 	"name": "scrapes",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "A command line utility that scrapes information from a webpage.",
+	"homepage": "https://github.com/ShaunBulbrook/scrapes",
+	"bugs": {
+		"url": "https://github.com/ShaunBulbrook/scrapes/issues"
+	},
 	"main": "dist/app.js",
 	"bin": "dist/app.js",
 	"files": [
@@ -21,6 +25,7 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@types/cheerio": "^0.22.11",
+		"@types/commander": "^2.12.2",
 		"@types/jest": "^24.0.11",
 		"@types/node-fetch": "^2.3.2",
 		"jest": "^24.7.1",
@@ -28,7 +33,6 @@
 		"typescript": "^3.4.4"
 	},
 	"dependencies": {
-		"@types/commander": "^2.12.2",
 		"cheerio": "^1.0.0-rc.3",
 		"commander": "^2.20.0",
 		"node-fetch": "^2.3.0"
