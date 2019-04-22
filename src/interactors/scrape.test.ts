@@ -1,5 +1,5 @@
-import { scrapeSelection, scrapeLinks } from "./scrape";
-import { markup, hackerNewsMarkup } from "../stubs/markup";
+const { scrapeSelection, scrapeLinks } = require("./scrape");
+const { markup, hackerNewsMarkup } = require("../stubs/markup");
 
 const fetch = jest.fn();
 fetch.mockReturnValue(markup);
