@@ -5,10 +5,18 @@ const Cheerio = require("cheerio");
  * @param markup string of html
  * @param selector query selector to rip text from
  */
-module.exports.scrapeSelection = (markup: string, selector: string): string => {
+module.exports.scrapeSelection = (
+	markup: string,
+	selector: string
+): string[] => {
 	const $: any = Cheerio.load(markup);
-	const selectedContent = $(selector).text();
-	if (selectedContent) {
+	const selectedContent: string[] = [];
+
+	$(selector).each((index: number, element: any) => {
+		selectedContent.push($(element).text());
+	});
+
+	if (selectedContent.length > 0) {
 		return selectedContent;
 	} else {
 		throw "No results found.";
