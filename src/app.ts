@@ -27,5 +27,5 @@ commander.parse(process.argv);
 module.exports = {
 	getPage: getPage,
 	scrapeLinks: scrape.scrapeLinks,
-	scrapeSelection: scrape.scrapeSelections
+	scrapeSelection: scrape.scrapeSelection
 };
