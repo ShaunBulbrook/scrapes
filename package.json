@@ -1,6 +1,6 @@
 {
 	"name": "scrapes",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A command line utility that scrapes information from a webpage.",
 	"homepage": "https://github.com/ShaunBulbrook/scrapes",
 	"bugs": {
