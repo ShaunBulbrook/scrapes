@@ -7,7 +7,7 @@
 		"url": "https://github.com/ShaunBulbrook/scrapes/issues"
 	},
 	"main": "dist/app.js",
-	"bin": "dist/app.js",
+	"bin": "dist/cmd.js",
 	"files": [
 		"dist/**/*"
 	],
