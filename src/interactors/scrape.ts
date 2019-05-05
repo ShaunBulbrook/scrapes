@@ -5,10 +5,7 @@ const Cheerio = require("cheerio");
  * @param markup string of html
  * @param selector query selector to rip text from
  */
-module.exports.scrapeSelection = (
-	markup: string,
-	selector: string
-): string[] => {
+const scrapeSelection = (markup: string, selector: string): string[] => {
 	const $: any = Cheerio.load(markup);
 	const selectedContent: string[] = [];
 
@@ -27,7 +24,7 @@ module.exports.scrapeSelection = (
  * Takes markup and returns an array of all links of the page.
  * @param markup string of html
  */
-module.exports.scrapeLinks = (markup: string): string[] => {
+const scrapeLinks = (markup: string): string[] => {
 	const $: any = Cheerio.load(markup);
 	const links: string[] = [];
 
@@ -41,3 +38,5 @@ module.exports.scrapeLinks = (markup: string): string[] => {
 		throw "No links could be found.";
 	}
 };
+
+export { scrapeLinks, scrapeSelection };
