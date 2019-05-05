@@ -39,3 +39,14 @@ describe("cmd", () => {
 		expect(result.stdout.includes(description)).toBe(true);
 	});
 });
+
+describe("selection", () => {
+	it("should print an error when it is fed a bad URL", async () => {
+		const result = await cli(
+			["selection", "http://an1nvalidUR1", "not-even-a-selector"],
+			"."
+		);
+		expect(result.stderr).not.toBe(null);
+		expect(result.stderr).not.toBe("");
+	});
+});
