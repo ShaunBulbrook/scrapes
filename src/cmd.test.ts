@@ -34,4 +34,8 @@ describe("cmd", () => {
 		const result = await cli(["-V"], ".");
 		expect(result.stdout).toBe("v" + version + "\n");
 	});
+	test("should return the correct description", async () => {
+		const result = await cli(["--help"], ".");
+		expect(result.stdout.includes(description)).toBe(true);
+	});
 });
