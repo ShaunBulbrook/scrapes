@@ -1,5 +1,5 @@
-//const getPage = require("./entities/requests").getPage;
 import { getPage } from "./entities/requests";
-import { scrapeSelection, scrapeLinks } from "./interactors/scrape";
+import scrapeLinks from "./interactors/scrapeLinks";
+import scrapeSelection from "./interactors/scrapeSelection";
 
-export { getPage, scrapeSelection, scrapeLinks };
+export { getPage, scrapeLinks, scrapeSelection };

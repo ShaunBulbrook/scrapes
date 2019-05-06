@@ -1,6 +1,6 @@
 let path = require("path");
 let exec = require("child_process").exec;
-let { version, description, bin } = require("../package.json");
+const { version, description, bin } = require("../package.json");
 
 /**
  * Invokes a process to test items run as execs in a cli.
