@@ -1,6 +1,5 @@
 import { markup } from "../stubs/markup";
-
-const { getPage } = require("./requests");
+import getPage from "./getPage";
 
 const fetch = jest.fn();
 fetch.mockReturnValue(markup);

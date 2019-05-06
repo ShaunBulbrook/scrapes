@@ -1,10 +1,10 @@
-let path = require("path");
-let exec = require("child_process").exec;
+import path from "path";
+import { exec } from "child_process";
 const { version, description, bin } = require("../package.json");
 
 /**
  * Invokes a process to test items run as execs in a cli.
- * @param args args to be executed in the commandline.
+ * @param args args to be executedoo in the commandline.
  * @param cwd current working directory. Defaults to '.'
  */
 function cli(args: string[], cwd: string) {
