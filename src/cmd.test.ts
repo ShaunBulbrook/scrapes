@@ -50,3 +50,14 @@ describe("selection", () => {
 		expect(result.stderr).not.toBe("");
 	});
 });
+
+describe("links", () => {
+	it("should show an error when it is fed a bad URL", async () => {
+		const result = await cli(
+			["links", "http://an1nvalidUR1", "not-even-a-selector"],
+			"."
+		);
+		expect(result.stderr).not.toBe(null);
+		expect(result.stderr).not.toBe("");
+	});
+});

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const getPage = require("./app").getPage;
+import { getPage, scrapeLinks, scrapeSelection } from "./app";
 const packagejson = require("../package.json");
 const commander = require("commander");
 
@@ -9,11 +9,15 @@ commander
 
 commander
 	.command("selection <location> <selector>")
-	.action((location: string, selector: string) => {
-		getPage(location).then((response: any) => {
-			process.stdout.write(response);
-		});
+	.action(async (location: string, selector: string) => {
+		const html = await getPage(location);
+		process.stdout.write(scrapeSelection(html, "h1").join(","));
 	});
 
+commander.command("links <location>").action((location: string) => {
+	getPage(location).then((response: any) => {
+		console.log(scrapeLinks(response));
+	});
+});
 
 commander.parse(process.argv);

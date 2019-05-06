@@ -14,7 +14,8 @@
 	"scripts": {
 		"test": "jest",
 		"build": "tsc",
-		"transform": "babel --plugins transform-es2015-modules-commonjs ./dist/ -d ./dist/"
+		"transform": "babel --plugins transform-es2015-modules-commonjs ./dist/ -d ./dist/",
+		"assemble": "npm run build && npm run transform && npm install -g"
 	},
 	"keywords": [
 		"dom",
