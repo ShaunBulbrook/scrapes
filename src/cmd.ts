@@ -15,17 +15,5 @@ commander
 		});
 	});
 
-// commander
-// 	.command("selection <location> <selector>")
-// 	.action((location: string, selector: string) => {
-// 		getPage(location).then((response: any) => {
-// 			console.log(scrape.scrapeSelection(response, selector));
-// 		});
-// 	});
 
-// commander.command("links <location>").action((location: string) => {
-// 	getPage(location).then((response: any) => {
-// 		console.log(scrape.scrapeLinks(response));
-// 	});
-// });
 commander.parse(process.argv);
