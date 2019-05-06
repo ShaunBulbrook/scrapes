@@ -18,19 +18,5 @@ const scrapeLinks = (markup: string): string[] => {
 		throw "No links could be found.";
 	}
 };
-const prefixLinks = (hostname: string, linkList: string[]) => {
-	if (!hostname) {
-		throw "Empty hostname supplied.";
-	} else if (linkList.length < 1) {
-		throw "No items were provided.";
-	}
-	return linkList.map((element: string) => {
-		if (element.includes(".")) {
-			return element;
-		}
-		const pathname = element.startsWith("/") ? element : "/" + element;
-		return hostname + pathname;
-	});
-};
+
 export default scrapeLinks;
-export { prefixLinks };
