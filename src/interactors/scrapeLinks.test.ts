@@ -1,4 +1,4 @@
-import scrapeLinks, { prefixLinks } from "./scrapeLinks";
+import scrapeLinks from "./scrapeLinks";
 const { markup, hackerNewsMarkup } = require("../stubs/markup");
 
 const fetch = jest.fn();
