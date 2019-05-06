@@ -11,12 +11,12 @@ commander
 	.command("selection <location> <selector>")
 	.action(async (location: string, selector: string) => {
 		const html = await getPage(location);
-		process.stdout.write(scrapeSelection(html, selector).join(","));
+		process.stdout.write(scrapeSelection(html, selector).join("\n"));
 	});
 
 commander.command("links <location>").action(async (location: string) => {
 	const html = await getPage(location);
-	process.stdout.write(scrapeLinks(html).join(","));
+	process.stdout.write(scrapeLinks(html).join("\n"));
 });
 
 commander.parse(process.argv);
