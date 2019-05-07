@@ -11,7 +11,7 @@ const prefixLinks = (hostname: string, linkList: string[]) => {
 		throw "No items were provided.";
 	}
 	return linkList.map((element: string) => {
-		if (element.includes(".")) {
+		if (element.includes(":")) {
 			return element;
 		}
 		return hostname + (element.startsWith("/") ? element : "/" + element);

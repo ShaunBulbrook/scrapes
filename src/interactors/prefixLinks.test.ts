@@ -65,4 +65,15 @@ describe("prefixLinks", () => {
 			"ftp://ftp.example.com"
 		]);
 	});
+	it("should not ignore elements with character: .", () => {
+		expect(
+			prefixLinks("example.com", [
+				"newsguidelines.html",
+				"/from?site=easyperf.net"
+			])
+		).toEqual([
+			"example.com/newsguidelines.html",
+			"example.com/from?site=easyperf.net"
+		]);
+	});
 });
