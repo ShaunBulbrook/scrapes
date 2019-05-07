@@ -1,6 +1,6 @@
 import { PageResponse } from "../types/types";
 
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 /**
  * Return the markup from the specified page.
@@ -13,3 +13,4 @@ const getPage = async (location: string): Promise<string> => {
 };
 
 export default getPage;
+export { fetch };
